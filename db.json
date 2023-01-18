@@ -1,63 +1,79 @@
 {
-    "books": [
-        {
-            "id": 1,
-            "title": "Book 1",
-            "isbn": "978-3-16-148410-1",
-            "author": "Author 1"
-        },
-        {
-            "id": 2,
-            "title": "Book 2",
-            "isbn": "978-3-16-148410-2",
-            "author": "Author 1"
-        },
-        {
-            "id": 3,
-            "title": "Book 3",
-            "isbn": "978-3-16-148410-3",
-            "author": "Author 2"
-        }
-    ],
-    "users": [
-
-    ],
-    "reviews": [
-        {
-            "id": 1,
-            "bookId": 1,
-            "username": "khuram",
-            "review": "I have read this book twice."
-        }, 
-        {
-            "id": 2,
-            "bookId": 1,
-            "username": "zahid",
-            "review": "I can't read this book again."
-        },
-        {
-            "id": 3,
-            "bookId": 2,
-            "username": "khuram",
-            "review": "I can relate to the author's experiences."
-        }, 
-        {
-            "id": 4,
-            "bookId": 2,
-            "username": "zahid",
-            "review": "I cannot relate to the author's experiences."
-        },
-        {
-            "id": 5,
-            "bookId": 3,
-            "username": "khuram",
-            "review": "Reading this book was so much fun."
-        }, 
-        {
-            "id": 6,
-            "bookId": 3,
-            "username": "zahid",
-            "review": "Reading this book was no fun at all."
-        }
-    ]
+  "books": [
+    {
+      "id": 1,
+      "title": "Book 1",
+      "isbn": "978-3-16-148410-1",
+      "author": "Author 1"
+    },
+    {
+      "id": 2,
+      "title": "Book 2",
+      "isbn": "978-3-16-148410-2",
+      "author": "Author 1"
+    },
+    {
+      "id": 3,
+      "title": "Book 3",
+      "isbn": "978-3-16-148410-3",
+      "author": "Author 2"
+    }
+  ],
+  "users": [
+    {
+      "username": "khuram",
+      "password": "123456",
+      "id": 1
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "username": "khuram",
+      "review": "I have read this book twice."
+    },
+    {
+      "id": 2,
+      "bookId": 1,
+      "username": "zahid",
+      "review": "I can't read this book again."
+    },
+    {
+      "id": 3,
+      "bookId": 2,
+      "username": "khuram",
+      "review": "I can relate to the author's experiences."
+    },
+    {
+      "id": 4,
+      "bookId": 2,
+      "username": "zahid",
+      "review": "I cannot relate to the author's experiences."
+    },
+    {
+      "id": 5,
+      "bookId": 3,
+      "username": "khuram",
+      "review": "Reading this book was so much fun."
+    },
+    {
+      "id": 6,
+      "bookId": 3,
+      "username": "zahid",
+      "review": "Reading this book was no fun at all."
+    },
+    {
+      "username": "khuram",
+      "bookId": "1",
+      "review": "It is something",
+      "id": 7
+    },
+    {
+      "username": "khuram",
+      "bookId": "1",
+      "review": "This is a new review for this book",
+      "id": 8
+    }
+  ]
 }
