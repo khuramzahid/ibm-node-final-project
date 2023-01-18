@@ -33,31 +33,28 @@ booksRouter.get('/author/:author', async (req, res, next) => {
 booksRouter.get('/title/:title', async (req, res, next) => {
   res.setHeader('Content-Type', 'application/json');
   const books = await axios.get(
-    `http://localhost:3001/books?author=${req.params.title}`
+    `http://localhost:3001/books?title=${req.params.title}`
   );
   res.json(books.data);
 });
 
 // Task 5: Get book Review
-booksRouter.get('/:bookId/reviews/:reviewId', async (req, res, next) => {
+booksRouter.get('/reviews/:reviewId', async (req, res, next) => {
   res.setHeader('Content-Type', 'application/json');
-  const books = await axios.get(
-    `http://localhost:3001/reviews?bookId=${req.params.bookId}&id=${req.params.reviewId}`
+  const reviews = await axios.get(
+    `http://localhost:3001/reviews/${req.params.reviewId}`
   );
-  res.json(books.data);
+  res.json(reviews.data);
 });
 
 // Registered Users
 // Task 8: Add/Modify a book review
 booksRouter.post('/:bookId/reviews', async (req, res, next) => {
   res.setHeader('Content-Type', 'text/plain');
-  const reviews = await axios.get(
-    'http://localhost:3001/reviews'
-  );
   await axios.post(
     'http://localhost:3001/reviews', 
     {
-      id: reviews.data.length + 1,
+      username: "empty",
       bookId: req.params.bookId,
       review: req.body.review
     }
@@ -67,13 +64,10 @@ booksRouter.post('/:bookId/reviews', async (req, res, next) => {
 
 booksRouter.put('/:bookId/reviews/:reviewId', async (req, res, next) => {
   res.setHeader('Content-Type', 'text/plain');
-  const reviews = await axios.get(
-    `http://localhost:3001/reviews?bookId=${req.params.bookId}&id=${req.params.reviewId}`
-  );
-  await axios.post(
-    'http://localhost:3001/reviews', 
+  await axios.put(
+    'http://localhost:3001/reviews/7', 
     {
-      id: reviews.data.length + 1,
+      username: "empty",
       bookId: req.params.bookId,
       review: req.body.review
     }
@@ -83,10 +77,10 @@ booksRouter.put('/:bookId/reviews/:reviewId', async (req, res, next) => {
 
 // Registered Users
 // Task 9: Delete book review added by that particular user
-booksRouter.delete('/:bookId/reviews/:reviewId', async (req, res, next) => {
+booksRouter.delete('/reviews/:reviewId', async (req, res, next) => {
   res.setHeader('Content-Type', 'text/plain');
   await axios.delete(
-    `http://localhost:3001/reviews?bookId=${req.params.bookId}&id=${req.params.reviewId}`
+    `http://localhost:3001/reviews/${req.params.reviewId}`
   );
   res.status(200).send("Review Deleted.");
 });
